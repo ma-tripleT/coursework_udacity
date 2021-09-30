@@ -65,18 +65,16 @@ def get_filters() -> List[str]:
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # Get user input for all required inputs
+    [city, month, day] = [input_selector(choice) for choice in ['city','month','day']]
+    # # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # city = input_selector('city')
 
-    city = input_selector('city')
+    # # get user input for month (all, january, february, ... , june)
+    # month = input_selector('month')
 
-
-    # get user input for month (all, january, february, ... , june)
-
-    month = input_selector('month')
-
-    # get user input for day of week (all, monday, tuesday, ... sunday)
-
-    day = input_selector('day')
+    # # get user input for day of week (all, monday, tuesday, ... sunday)
+    # day = input_selector('day')
 
     print('-'*40)
     return [city, month, day]
@@ -169,7 +167,7 @@ def dob_trim(df: DataFrame) -> DataFrame:
     df = df[df['Birth Year'] >= EARLEST_DOB]
     print("This also happens to remove the NaN values")
     print('-'*40)
-
+    return df
     # # Find
     # nan_mask = df['Birth Year'].isna()
     # how_many_nans = nan_mask.sum()
@@ -182,9 +180,6 @@ def dob_trim(df: DataFrame) -> DataFrame:
     #         int(np.rint(np.random.normal(loc=mu_dob, scale=sigma_dob))),
     #         inplace=True)
 
-
-
-    return df
 
 def data_cleaning(df: DataFrame) -> DataFrame:
     """A function to clean up the data by removing problems such as 'NaN' entries
