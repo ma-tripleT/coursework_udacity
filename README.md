@@ -25,6 +25,20 @@ The file `queries.sql` is my work for the SQL project and feature some queries f
 
 This project looks at statistics from incomplete data of a bikeshare program in Chicago, NYC & Washington DC. The user interface is a terminal prompt all contained in `bikeshare_2.py`.
 
+To run this project from the terminal: 
+
+```python
+python bikeshare_2.py
+```
+
+and you will be prompted three times for:
+
+1. A city - either "Chicago", "New York City" or "Washington"
+2. A month - either the Gregorian month or "all"
+3. Day of the week - any of the days or "all"
+
+The input is case insensitive, so you can type "WaSHinGTon" or any combination. If you enter a word that is not on the accepted list, you'll be prompted to re-enter until a valid input is provided. 
+
 #### Version Control
 
 Part of the project is to create and update a github repo, which has been done whilst branching off the master to fill out this documentation.
