@@ -48,8 +48,9 @@ def input_selector(what_you_want: str) -> str:
         if selection in options:
             print(f"Thanks for choosing the {what_you_want} as: {selection}")
             print('- '*10)
-            return selection
             valid_input = True
+            return selection
+
         else:
             print('-+/'*10)
             print(f"\nThat {what_you_want} '{selection}' isn't on the list of options!\nPlease try again\n")
@@ -65,17 +66,14 @@ def get_filters() -> List[str]:
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
 
+    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city = input_selector('city')
 
-
     # get user input for month (all, january, february, ... , june)
-
     month = input_selector('month')
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
-
     day = input_selector('day')
 
     print('-'*40)
@@ -311,7 +309,7 @@ def user_stats(df):
         print(f"The earliest birth year was limited to {EARLEST_DOB} because anyone older seems unrealistic!")
         print(f"The youngest rider was born in {int(df['Birth Year'].max())}")
         print(f"More riders were born in {int(df['Birth Year'].mode()[0])} than any other year")
-     else:
+    else:
         print("For your selections we don't have any User Type stats")
 
 
