@@ -66,15 +66,16 @@ def get_filters() -> List[str]:
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
+    # Get user input for all required inputs
+    [city, month, day] = [input_selector(choice) for choice in ['city','month','day']]
+    # # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # city = input_selector('city')
 
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    city = input_selector('city')
+    # # get user input for month (all, january, february, ... , june)
+    # month = input_selector('month')
 
-    # get user input for month (all, january, february, ... , june)
-    month = input_selector('month')
-
-    # get user input for day of week (all, monday, tuesday, ... sunday)
-    day = input_selector('day')
+    # # get user input for day of week (all, monday, tuesday, ... sunday)
+    # day = input_selector('day')
 
     print('-'*40)
     return [city, month, day]
