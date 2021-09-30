@@ -168,7 +168,7 @@ def dob_trim(df: DataFrame) -> DataFrame:
     df = df[df['Birth Year'] >= EARLEST_DOB]
     print("This also happens to remove the NaN values")
     print('-'*40)
-
+    return df
     # # Find
     # nan_mask = df['Birth Year'].isna()
     # how_many_nans = nan_mask.sum()
@@ -181,9 +181,6 @@ def dob_trim(df: DataFrame) -> DataFrame:
     #         int(np.rint(np.random.normal(loc=mu_dob, scale=sigma_dob))),
     #         inplace=True)
 
-
-
-    return df
 
 def data_cleaning(df: DataFrame) -> DataFrame:
     """A function to clean up the data by removing problems such as 'NaN' entries
