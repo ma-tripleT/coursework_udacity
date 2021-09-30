@@ -48,8 +48,8 @@ def input_selector(what_you_want: str) -> str:
         if selection in options:
             print(f"Thanks for choosing the {what_you_want} as: {selection}")
             print('- '*10)
-            return selection
             valid_input = True
+            return selection
         else:
             print('-+/'*10)
             print(f"\nThat {what_you_want} '{selection}' isn't on the list of options!\nPlease try again\n")
@@ -311,7 +311,7 @@ def user_stats(df):
         print(f"The earliest birth year was limited to {EARLEST_DOB} because anyone older seems unrealistic!")
         print(f"The youngest rider was born in {int(df['Birth Year'].max())}")
         print(f"More riders were born in {int(df['Birth Year'].mode()[0])} than any other year")
-     else:
+    else:
         print("For your selections we don't have any User Type stats")
 
 
